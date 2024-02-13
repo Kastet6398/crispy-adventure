@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class VisualController {
     @GetMapping("/loginNew")
-    public String loginNew(@CookieValue(value = "uid") String uid) {
+    public String loginNew() {
         return "index";
     }
 

@@ -40,32 +40,15 @@ function saveFormData(formId, e) {
     e.preventDefault();
 }
 
-/*
-To get the user:
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "/api/user", true);
-xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-xhr.onload = function() {
-  Object user = JSON.parse(xhr.responseText);
-  console.log(user.name);
-  console.log(user.email);
-  console.log(user.password);
-};
-
-xhr.onerror = function() {
-  alert(`Error while fetching user occurred`);
-};
-
-xhr.send();
-*/
 var xhr = new XMLHttpRequest();
 xhr.open("GET", "/api/user", true);
 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 xhr.onload = function() {
   if (xhr.responseText == "") {
+    // TODO: handle the case when user isn't logged in
     console.log("Not signed in.");
   } else {
+    // TODO: handle the user
     var user = JSON.parse(xhr.responseText);
     console.log("Username: " + user.name);
     console.log("Email: " + user.email);
